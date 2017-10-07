@@ -1,4 +1,3 @@
-/* public domain, do as you wish */
 #include <X11/Xlib.h>
 #include <X11/Xproto.h>
 #include <X11/Xatom.h>
@@ -54,10 +53,8 @@ main(int argc, char **argv)
 	double gammag = AVG(g);
 	double gammab = AVG(b);
 
-	// int num_crtcs = res->ncrtc;
 	for (int c = 0; c < res->ncrtc; c++) {
 		int crtcxid = res->crtcs[c];
-		// XRRCrtcInfo *crtc_info = XRRGetCrtcInfo(dpy, res, crtcxid);
 		XRRGetCrtcInfo(dpy, res, crtcxid);
 
 		int size = XRRGetCrtcGammaSize(dpy, crtcxid);
